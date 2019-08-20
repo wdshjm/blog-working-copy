@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   public cards: any[];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.dataService.getList().subscribe(resp => {
@@ -21,7 +21,9 @@ export class DashboardComponent implements OnInit {
   }
 
   newPost(){
-    // const dialogRef = this.dialog.open(PostDialogComponent);
+    const dialogRef = this.dialog.open(PostDialogComponent, {
+      data: { name: "TEST" }
+    });
 
 
 

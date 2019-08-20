@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 export class DataService {
 
   public dataUrl: string = "https://api.myjson.com/bins/8vlnz";
+  private result: any[];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -15,14 +16,14 @@ export class DataService {
 
   public postCard(card: any) {
     this.httpClient.get(this.dataUrl).subscribe(resp => {
-      let result = resp;
+      this.result = resp;
 
       //result = `${result},${card}`;
       
-      result.push(card);
+      this.result.push(card);
 
-      console.log(result);
-      this.putCards(result);     
+      console.log(this.result);
+      this.putCards(this.result);     
     });
   }
 

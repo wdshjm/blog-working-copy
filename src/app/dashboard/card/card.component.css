@@ -1,0 +1,19 @@
+.container {
+  margin: 2rem;
+  padding: 3rem;
+  min-width: 30rem;
+  text-align: center;
+  background: #42A5F5;
+  border-radius: 1rem;
+  transition: ease all 0.5s;
+}
+
+@media (max-width: 820px) {
+  .container {
+    min-width: 10rem;
+  }
+}
+
+.container:hover {
+  transform: scale(1.1);
+}

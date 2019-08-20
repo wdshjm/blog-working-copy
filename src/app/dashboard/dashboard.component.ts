@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   newPost(){
-    this.dataService.postCard( {"id": 999, "title": "TestTitle1", "content": "TestContent4"} );
+    this.dataService.postCard( {"id": 123, "title": "TestTitle1", "content": "TestContent4"} );
     //this.
   }
 

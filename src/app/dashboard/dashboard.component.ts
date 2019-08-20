@@ -14,12 +14,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getList().subscribe(resp => {
-      this.cards = resp.cards;
+      this.cards = resp;
     });
   }
 
   newPost(){
-      
+    this.dataService.postCard( {"id": 999, "title": "TestTitle1", "content": "TestContent4"} );
+    //this.
   }
 
 }

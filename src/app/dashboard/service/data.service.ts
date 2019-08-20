@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 @Injectable()
 export class DataService {
 
-  public dataUrl: string = "https://api.myjson.com/bins/13cbx3";
+  public dataUrl: string = "https://api.myjson.com/bins/8vlnz";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -13,8 +13,24 @@ export class DataService {
     return this.httpClient.get(this.dataUrl);
   }
 
-    public getPost(post: any): Observable<any> {
-    return this.httpClient.post(this.dataUrl, post);
+  public postCard(card: any) {
+    this.httpClient.get(this.dataUrl).subscribe(resp => {
+      let result = resp;
+
+      //result = `${result},${card}`;
+      
+      result.push(card);
+
+      console.log(result);
+      this.putCards(result);     
+    });
+  }
+
+  private putCards(result) {
+    console.log("drin");
+     this.httpClient.put(this.dataUrl, result).subscribe(resp => {
+
+     });
   }
 
 }

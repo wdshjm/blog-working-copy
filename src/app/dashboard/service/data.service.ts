@@ -13,4 +13,8 @@ export class DataService {
     return this.httpClient.get(this.dataUrl);
   }
 
+    public getPost(post: any): Observable<any> {
+    return this.httpClient.post(this.dataUrl, post);
+  }
+
 }

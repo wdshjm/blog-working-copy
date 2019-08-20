@@ -18,16 +18,12 @@ export class DataService {
     this.httpClient.get<Object[]>(this.dataUrl).subscribe(resp => {
       this.result = resp;
       this.result.push(card);
-
-      console.log(this.result);
       this.putCards(this.result);     
     });
   }
 
   private putCards(result) {
-    console.log("drin");
      this.httpClient.put(this.dataUrl, result).subscribe(resp => {
-
      });
   }
 

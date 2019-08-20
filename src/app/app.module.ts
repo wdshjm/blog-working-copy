@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardComponent } from './dashboard/card/card.component';
 import { DataService } from './dashboard/service/data.service';
+import { PostDialogComponent } from './dashboard/post-dialog/post-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    CardComponent
+    CardComponent,
+    PostDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { DataService } from './dashboard/service/data.service';
     MatDialogModule
   ],
   providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PostDialogComponent]
 })
 export class AppModule { }

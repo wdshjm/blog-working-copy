@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './service/data.service';
+import { MatDialog } from "@angular/material";
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,8 +21,11 @@ export class DashboardComponent implements OnInit {
   }
 
   newPost(){
-    this.dataService.postCard( {"id": 123, "title": "TestTitle1", "content": "TestContent4"} );
-    //this.
+    // const dialogRef = this.dialog.open(PostDialogComponent);
+
+
+
+    //this.dataService.postCard( {"id": 123, "title": "TestTitle1", "content": "TestContent4"} );
   }
 
 }
